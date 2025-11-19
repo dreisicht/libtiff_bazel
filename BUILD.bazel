@@ -31,7 +31,6 @@ cmake(
     visibility = ["//visibility:public"],
     deps = [
         "@libjpeg_turbo",
-        "@simde",
         "@zstd",
         # "@zlib",
     ],
