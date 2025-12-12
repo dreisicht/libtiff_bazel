@@ -1,28 +1,12 @@
-"""General bazel dependencies."""
-
 module(
-    name = "terrain_displacer",
-    version = "0.0.0",
+    name = "libjpeg_turbo",
+    version = "3.1.2",
+    bazel_compatibility = [">=7.2.1"],
+    compatibility_level = 1,
 )
 
-bazel_dep(name = "apple_support", version = "1.24.5", repo_name = "build_bazel_apple_support")
-bazel_dep(name = "rules_foreign_cc", version = "0.15.1")
-bazel_dep(name = "libjpeg_turbo", version = "3.1.3")
-bazel_dep(name = "zstd", version = "1.5.7")
-
-_ALL_CONTENT = """\
-filegroup(
-    name = "all_srcs",
-    srcs = glob(["**"]),
-    visibility = ["//visibility:public"],
-)
-"""
-
-git_repository = use_repo_rule("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
-
-git_repository(
-    name = "libtiff_src",
-    build_file_content = _ALL_CONTENT,
-    remote = "https://gitlab.com/libtiff/libtiff.git",
-    commit = "9923b128f448270d34a88357ba9b10e108a3eafb",
-)
+bazel_dep(name = "bazel_skylib", version = "1.8.2")
+bazel_dep(name = "nasm", version = "2.16.03.bcr.2")
+bazel_dep(name = "platforms", version = "1.0.0")
+bazel_dep(name = "rules_cc", version = "0.2.14")
+bazel_dep(name = "rules_license", version = "1.0.0")
