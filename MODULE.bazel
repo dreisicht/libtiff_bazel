@@ -23,6 +23,6 @@ git_repository = use_repo_rule("@bazel_tools//tools/build_defs/repo:git.bzl", "g
 git_repository(
     name = "libtiff_src",
     build_file_content = _ALL_CONTENT,
-    remote = "https://gitlab.com/libtiff/libtiff.git",
     commit = "9923b128f448270d34a88357ba9b10e108a3eafb",
+    remote = "https://gitlab.com/libtiff/libtiff.git",
 )
